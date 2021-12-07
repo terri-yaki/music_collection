@@ -1,0 +1,26 @@
+<head>
+  <link rel="icon" href="https://cdn.icon-icons.com/icons2/38/PNG/512/music_5261.png">
+</head>
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @song.name %></h1>
+  <p class="lead">Link to song: <%= link_to @song.link , "#{@song.link}" , target: :_blank %></p>
+  <hr class="my-4">
+  <p>Song ID: <%= @song.sid %></p>
+</div>
+
+<p>
+  <strong>Favourite?...</strong>
+  <% if @song.favourite == true %>
+    Yes!
+  <% else %>
+    No
+  <% end %>
+</p>
+
+<% if user_signed_in? == true && current_user.email == "admin@gmail.com" %>
+<%= link_to 'Edit', edit_song_path(@song) , class:"btn btn-outline-secondary"%>
+<% else if user_signed_in? == false || current_user.email != "admin@gmail.com" %>
+<%= link_to 'Back', songs_path, class:"btn btn-outline-secondary" %>
+<% end %>
+<% end %>

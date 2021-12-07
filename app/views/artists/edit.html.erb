@@ -1,0 +1,21 @@
+<!--
+  LOGIC:
+  for signed in user and is an admin,
+  they can edit and destroy items, appliable to other views.
+  Otherwise for visitors and non admin users visiting edit page there will be an alert message for them.
+-->
+
+<% if user_signed_in? == true && current_user.email == "admin@gmail.com" %>
+  <h1>Editing Artist</h1>
+
+<%= render 'form', artist: @artist %>
+
+  <%= link_to 'Show', @artist, class:"btn btn-outline-secondary" %>
+  <%= link_to 'Back', artists_path, class:"btn btn-outline-secondary" %>
+
+  <% else if user_signed_in? == false || current_user.email != "admin@gmail.com" %>
+
+      <h1><br>🚫Hey looks like you're not authorized yet, click <%= link_to "here", :back %> to go back🚫</h1>
+  <% end %>
+
+  <% end %>

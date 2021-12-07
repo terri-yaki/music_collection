@@ -1,0 +1,45 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="card border-light bg-dark mb-3">
+  <div class="card-header bg-dark"><h1 style="text-align:left">Sign Up</h1></div>
+  <div class="card-body bg-dark field form-group">
+
+    <%= f.label :email %><br>
+    <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email", autocomplete: "email" %>
+
+  <br>
+
+  <div class="field form-group">
+    <%= f.label :password %>
+
+    <!--minimum was set to 6 characters-->
+
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <br>
+    <%= f.password_field :password, class:"form-control", placeholder:"Password", autocomplete: "new-password" %>
+  </div>
+  <br>
+
+  <div class="field form-group">
+
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Re-enter password", autocomplete: "new-password" %>
+
+  </div>
+  <br>
+
+  <div class="actions">
+
+    <%= f.submit "Sign up", class:"btn btn-secondary" %>
+
+    <br>
+    </div>
+  </div>
+</div>
+
+<% end %>
+<br>
+<%= render "devise/shared/links" %>

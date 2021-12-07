@@ -1,0 +1,78 @@
+<style>
+
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url("https://fonts.google.com/specimen/Praise#standard-styles") format("praise");
+}
+
+h1 {
+  color:#FFFFFF;
+  text-align: center;
+  font-style: Bold;
+}
+
+p {
+  color:#FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  font-style: oblique;
+}
+
+body {
+  background-color: #121212;
+  color :#FFFFFF;
+}
+
+.box:before {
+  content:"";
+  position:absolute;
+  width:4000px;
+  height:4000px;
+  background:#242424;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:40%;
+  animation:fill 10s ease-in-out 3s;
+  animation-fill-mode: forwards;
+  z-index:-1;
+  overflow: hidden;
+}
+@keyframes fill {
+  from {
+    top:1000px;
+    transform:translateX(-50%) rotate(0deg);
+  }
+  to {
+    top:-50px;
+    transform:translateX(-50%) rotate(360deg);
+  }
+}
+}
+
+.linkto{
+  color: white;
+}
+
+.bg-dark{
+  background-color: #121212;
+
+}
+
+.thead{
+    color: #FFFFFF;
+}
+
+.strong{
+
+  font-size: 16px;
+}
+
+.table{
+
+  background-color: #23395D;
+}
+
+.hidden {
+  display: none;
+}
+</style>

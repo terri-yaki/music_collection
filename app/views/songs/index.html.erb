@@ -1,0 +1,68 @@
+<head>
+  <link rel="icon" href="https://cdn.icon-icons.com/icons2/38/PNG/512/music_5261.png">
+</head>
+
+<h1>Songs</h1>
+<br>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>Song Name</th>
+      <th>Favourite?</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+
+        <td><%= song.name %></td>
+
+        <td>
+          <% if song.favourite == true %>                  <!--For true result returns Yes, false returns No-->
+            Yes
+          <% else %>
+            No
+          <% end %>
+        </td>
+
+        <!--
+          LOGIC:
+          for signed in user and is an admin,
+          they can edit and destroy items, appliable to other views.
+          Otherwise for visitors and non admin users can only see show button.
+        -->
+
+        <% if user_signed_in? == true && current_user.email == "admin@gmail.com" %>
+
+            <td><%= link_to 'Show', song %></td>
+            <td><%= link_to 'Edit', edit_song_path(song) %></td>
+            <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+          <% else if user_signed_in? == false || current_user.email != "admin@gmail.com" %>
+
+            <td><%= link_to 'Show', song %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!--
+
+All visitors not allowed to add songs to my collection except using admin account
+
+-->
+
+<% if user_signed_in? == true && current_user.email == "admin@gmail.com" %>
+  <%= link_to 'New songs', new_song_path , class:"btn btn-outline-secondary"%>
+<% end %>
+<br><br>
+<%= link_to 'Albums', albums_path , class:"btn btn-outline-secondary"%>
+<%= link_to 'Artists', artists_path , class:"btn btn-outline-secondary"%>
+<br>

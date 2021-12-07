@@ -1,0 +1,13 @@
+<head>
+  <link rel="icon" href="https://cdn.icon-icons.com/icons2/38/PNG/512/music_5261.png">
+</head>
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @artist.art_name %></h1>
+
+  <hr class="my-4">
+  <p>Artist ID: <%= @artist.art_id %></p>
+</div>
+
+<% link_to 'Edit', edit_artist_path(@artist) %>
+<%= link_to 'Back', artists_path , class:"btn btn-outline-secondary"%>

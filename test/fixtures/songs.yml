@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sid: MyString
+  name: MyString
+  link: MyString
+  favourite: false
+
+two:
+  sid: MyString
+  name: MyString
+  link: MyString
+  favourite: false

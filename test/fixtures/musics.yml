@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ms_id: 1
+  ms_name: MyString
+  ms_year: 1
+  ms_fav: false
+
+two:
+  ms_id: 1
+  ms_name: MyString
+  ms_year: 1
+  ms_fav: false

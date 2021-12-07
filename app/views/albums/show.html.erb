@@ -1,0 +1,17 @@
+<head>
+  <link rel="icon" href="https://cdn.icon-icons.com/icons2/38/PNG/512/music_5261.png">
+</head>
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @album.alb_name %></h1>
+  <p class="lead">Release year: <%= @album.alb_year %></p>
+  <hr class="my-4">
+  <p>Album ID: <%= @album.alb_id %></p>
+</div>
+
+<body bgcolor= "#242424">
+
+</body>
+
+<% link_to 'Edit', edit_album_path(@album) , class:"btn btn-outline-secondary"%>
+<%= link_to 'Back', albums_path, class:"btn btn-outline-secondary" %>

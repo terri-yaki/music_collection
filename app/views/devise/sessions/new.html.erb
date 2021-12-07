@@ -1,0 +1,44 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
+<!--
+
+for each form control they are in longer design, placeholder for preview of the input field
+
+-->
+
+<div class="card border-light bg-dark mb-3">
+  <div class="card-header bg-dark"><h1 style="text-align:left">Log in</h1></div>
+  <div class="card-body bg-dark field form-group">
+
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class:"form-control", placeholder:"Email", autofocus: true, autocomplete: "email" %>
+
+    <br>
+
+    <%= f.label :password %><br />
+    <%= f.password_field :password, class:"form-control", placeholder:"Password", autocomplete: "current-password" %>
+
+    <br>
+
+    <!--
+      rememberable for browser to remember the account
+    -->
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field form-check">
+        <%= f.check_box :remember_me, class:"form-check-input" %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <br>
+      <%= f.submit "Log in", class:"btn btn-secondary"  %>
+    </div>
+  </div>
+</div>
+
+<% end %>
+<br>
+<%= render "devise/shared/links" %>

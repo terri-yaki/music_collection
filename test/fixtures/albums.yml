@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alb_id: 1
+  alb_name: MyString
+  alb_year: 1
+
+two:
+  alb_id: 1
+  alb_name: MyString
+  alb_year: 1
